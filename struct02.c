@@ -8,10 +8,13 @@ typedef struct{
 }Pessoa;
 
 void getPessoa(Pessoa p[]);
+void setPessoa(Pessoa p[]);
+
 int main(){
     Pessoa p1[5];
-    getPessoa(p1);
-    printf("%d %d %s",p1[1].numero,p1[1].endereco,p1[1].nome);
+    getPessoa(&p1);
+    setPessoa(&p1);
+
     return 0;
 }
 
@@ -27,3 +30,12 @@ void getPessoa(Pessoa p[]){
     }
 }
 
+void setPessoa(Pessoa p[]){
+     for(int i = 0;i< 5;i++){
+        printf("Nome: %s\n",p[i].nome);
+        printf("Numero: %d\n",p[i].numero);
+        printf("Endereco: %d\n",p[i].endereco);
+
+     }
+
+}
